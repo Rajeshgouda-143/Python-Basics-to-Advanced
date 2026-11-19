@@ -859,17 +859,17 @@ Syntax:- enumerate(collection,[start= ])'''
 
 
 '''Q3. WAP TO CREATE A DICTIONARY FROM A LIST WITH KEY AS INDEX AND VALUE AS ELEMENT IF THE INDEX IS EVEN ELSE KEY AS LENGTH AND VALUE AS REVERSED ELEMENT .'''
-lst = ["apple","mango","grapes","tamarind","orange"]
-dic={}
-for i,j in enumerate(lst):
-    if i%2==0:
-        key = i
-        value = j
-    else:
-        key = len(j)
-        value = j[::-1]
-    dic[key] = value
-print(dic)
+# lst = ["apple","mango","grapes","tamarind","orange"]
+# dic={}
+# for i,j in enumerate(lst):
+#     if i%2==0:
+#         key = i
+#         value = j
+#     else:
+#         key = len(j)
+#         value = j[::-1]
+#     dic[key] = value
+# print(dic)
 
 # op:- {0: 'apple', 5: 'ognam', 2: 'grapes', 8: 'dniramat', 4: 'orange'}
 
@@ -886,6 +886,191 @@ print(dic)
 # print(dic)
 
 # op:- {'ple': 'ap', 'pes': 'ap', 'rind': 'ap', 'nge': 'ora'}
+
+
+'''Q5. WAP TO CREATE A SET FROM A LIST IF THE ELEMENT INDEX IS ODD ADD THE ELEMENTS .'''
+# code:-
+# lst = ["a","b","c","d","e"]
+# s = set()
+# for i,j in enumerate(lst):
+#     if i%2==0:
+#         s.add(j)
+# print(s)
+
+# op:- {'c', 'e', 'a'}
+
+'''without enumerate'''
+
+# lst = ["a","b","c","d","e"]
+# s = set()
+# for i in range(len(lst)):
+#     if i%2==0:
+#         s.add(lst[i])
+# print(s)
+
+# op;- {'c', 'e', 'a'}
+
+
+'''Q6. WAP TO CREATE A LIST FROM A STRING IF THE INDEX IS EVEN ADD THE ELEMENT ELSE ADD INDEX OF THE ELEMENT TO THE LIST .'''
+# s = "JayJagannathSwami"
+# lst = []
+
+# for i,j in enumerate(s):
+#     if i%2==0:
+#         lst.append(j)
+#     else:
+#         lst.append(i)
+# print(lst)
+
+'''without enumerate'''
+
+# s = "JayJagannathSwami"
+# lst = []
+
+# for i in range(len(s)):
+#     if i%2==0:
+#         lst.append(s[i])
+#     else:
+#         lst.append(i)
+# print(lst)
+
+# op:-  ['J', 1, 'y', 3, 'a', 5, 'a', 7, 'n', 9, 't', 11, 'S', 13, 'a', 15, 'i']
+
+
+
+# Cycle():-
+# ---------
+''' It is used to repeat the elements of an iterable continuously in a cyclic manner.
+--> It is present a module called itertools .
+In simple words, once all elements are completed, it starts again from the first element.
+
+Syntax:- from itertools import cyclecycle(iterable)
+
+'''
+# example 2:- by using list
+# from itertools import cycle
+# lst = [10, 20, 30]
+# count = 0
+
+# for i in cycle(lst):
+#     print(i)
+#     count += 1
+
+#     if count == 7:
+#         break
+
+'''Important: cycle() produces an infinite iterator. So, when using it in a loop, use break or another stopping condition if you don't want an infinite loop.  '''
+
+# example 2:- by using string
+# from itertools import cycle
+# s = "ABC"
+# count = 0
+
+# for i in cycle(s):
+#     print(i)
+#     count += 1
+
+#     if count == 8:
+#         break
+
+
+'''Q1. WAP TO GET THE BELOW OUTPUT
+0 even
+1 odd
+2 even
+3 odd
+4 even
+5 odd 
+'''
+# from itertools import cycle
+# lst = ["even","odd"]
+
+# for i,j in zip(range(6),cycle(lst)):
+#     print(i,j)
+
+
+'''Q2. WAP TO REVERSE A STRING WITHOUT USING SLICING .'''
+# s = "Python"
+# res=""
+# for i in s:
+#     res = i+res
+# print(res)
+
+# op:- nohtyP
+
+'''Q3. WAP TO COMBINE TWO LISTS INTO A SINGLE L1 LIST .'''
+# l1 = [1,2,3,4]
+# l2 = [5,6,7,8]
+# for i in range(len(l2)):
+#     l1.append(l2[i])
+# print(l1)
+
+# op:- [1, 2, 3, 4, 5, 6, 7, 8]
+
+# or
+
+# l1 = [1,2,3,4]
+# l2 = [5,6,7,8]
+# for i in l2:
+#     l1.append(i)
+# print(l1)
+
+# op:- [1, 2, 3, 4, 5, 6, 7, 8]
+
+# or
+
+# l1 = [1,2,3,4]
+# l2 = [5,6,7,8]
+# l1.extend(l2)
+# print(l1)
+
+# op:- [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+'''Q4. WAP TO CHECK THE MISSING NUMBER FROM A LIST .'''
+# lst = [1,2,4,5]
+# no = 5
+# avg_no = no * (no+1)//2
+# sum_of_num = sum(lst)
+# missing_number = avg_no - sum_of_num
+# print("missing_number : ",missing_number)
+
+# op:- missing_number :  3
+
+'''without typecasting'''
+
+# lst = [1,2,4,5]
+# no = 5
+# sum_of_num = 0
+# avg_of_nums = no * (no+1)//2
+
+# for i in lst:
+#     sum_of_num+=i
+#     res = avg_of_nums - sum_of_num
+# print("Missing Number is : ",res)
+
+# op:- Missing Number is :  3
+
+
+# or - by using enumerate 
+# lst = [1,2,4,5]
+# for i,j in enumerate(lst,start=1):
+#     if i!=j:
+#         print("Missing Number is: ",i)
+#         break
+
+# op:- Missing Number is:  3
+
+
+
+
+
+
+
+
+
+
+
 
 
 
